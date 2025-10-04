@@ -1,0 +1,75 @@
+:root { --primary:#2c3e50; --accent:#e67e22; --bg:#f6f7fb; }
+*{box-sizing:border-box;}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#222}
+.auth{display:grid;place-items:center;height:100vh}
+.card{margin-top: 30px;background:#fff;padding:22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.06);display:grid;gap:12px;min-width:320px}
+.card h2{margin:0 0 6px}
+.card .error{color:#b00020;margin:0}
+.card input, .card textarea{padding:10px;border:1px solid #ddd;border-radius:10px;font:inherit}
+.btn{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+.btn.danger{background:#d9534f ; text-decoration: none;}
+.admin-header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--primary);color:#fff}
+.admin-header nav a{
+	color:#fff;text-decoration:none;margin-left:12px;border-bottom: 2px solid transparent ;
+}
+.admin-header nav a.active,
+.admin-header nav a:hover{
+  	border-color: #fff;
+  	color: #e67e22;
+}
+textarea{
+	resize: none;
+	height: 8rem;
+}
+.container{max-width:1000px;margin:18px auto;padding:0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tile{display:block;background:#fff;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.06);text-decoration:none;color:#222;text-align:center;font-weight:700}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:3px solid #eee;padding:20px;text-align:left;vertical-align:top;}
+
+.menu{
+    display: none;
+    cursor: pointer;
+  }
+
+ @media screen and (max-width: 700px){
+    
+    .table th,.table td{border-bottom:3px solid #eee;padding:7px;text-align:left;vertical-align:top;}
+    
+	.btn.danger{background:none ; text-decoration: none; color: #d9534f }
+	.menu{
+      display: block;
+    }
+
+    nav {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100rem;
+     padding: 1rem 0;
+     background: #03065d;
+     backdrop-filter: blur(50px);
+     border-top: .1rem solid rgba(0, 0, 0, .2);
+     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+     text-align: center;
+     display: none;
+     transition: 0.5s;
+     z-index: 1000;
+
+    }
+    nav a{
+        display: flex;
+        padding-top: 2rem;
+         justify-content: center; 
+        color: #ffffff;
+    }
+    nav a:hover, nav a.active{
+        color: #eaff00; 
+    }
+    
+    nav.active{
+        display: block;
+        transition: 0.5s;
+    }
+  }
